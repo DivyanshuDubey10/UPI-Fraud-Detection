@@ -46,7 +46,7 @@ function App() {
       );
 
       const response = await fetch(
-        "http://localhost:8000/predict",
+        `${import.meta.env.VITE_API_URL}/predict`,
         {
           method: "POST",
           headers: {
