@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #eef1f5;
+  color: #182235;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  background: #111827;
+  color: #ffffff;
+  padding: 50px 24px;
+}
+
+.header > div {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #aeb8c9;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin: 12px 0 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ---------- MAIN ---------- */
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 32px auto;
+}
+
+/* ---------- FORM CARD ---------- */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d6dce5;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 22px;
+}
+
+.section-header p {
+  margin: 7px 0 0;
+  color: #4b5563;
+}
+
+/* ---------- FORM ---------- */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #c7ced9;
+  border-radius: 9px;
+  outline: none;
+  background: #f9fafb;
+  color: #111827;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.field input::placeholder {
+  color: #6b7280;
+}
+
+.field input:focus {
+  background: #ffffff;
+  border-color: #374151;
+  box-shadow: 0 0 0 3px rgba(55, 65, 81, 0.12);
+}
+
+/* ---------- BUTTONS ---------- */
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 9px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
+}
+
+.primary-button {
+  background: #111827;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: #1f2937;
+}
+
+.secondary-button {
+  background: #dfe4eb;
+  color: #182235;
+}
+
+.secondary-button:hover {
+  background: #cfd6e0;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- LOADING ---------- */
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.status-card p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #64748b;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- RESULT CARD ---------- */
+
+.result-card {
+  margin-top: 24px;
+  padding: 30px;
+  border-radius: 16px;
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.12);
+}
+
+.result-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #cbd5e1;
+}
+
+.result-card h2 {
+  margin: 8px 0 24px;
+  font-size: 34px;
+  letter-spacing: -0.5px;
+}
+
+/* ---------- LEGITIMATE ---------- */
+
+.legitimate-card {
+  background: #173b2c;
+  border-left: 6px solid #4ade80;
+}
+
+.legitimate-card .result-label {
+  color: #a7f3d0;
+}
+
+/* ---------- FRAUD ---------- */
+
+.fraud-card {
+  background: #451a1a;
+  border-left: 6px solid #f87171;
+}
+
+.fraud-card .result-label {
+  color: #fecaca;
+}
+
+/* ---------- ERROR ---------- */
+
+.error-card {
+  background: #3f1d1d;
+  border-left: 6px solid #ef4444;
+}
+
+.error-card .result-label {
+  color: #fecaca;
+}
+
+/* ---------- PROBABILITY ---------- */
+
+.probability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.probability strong {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.probability-bar {
+  width: 100%;
+  height: 10px;
+  background: #374151;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.probability-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+
+.prediction-code {
+  margin: 18px 0 0;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  text-align: center;
+  padding: 30px 0;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .header {
+    padding: 35px 20px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .container {
+    width: min(100% - 20px, 1100px);
+    margin: 20px auto;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+}
+
